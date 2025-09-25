@@ -240,10 +240,10 @@ function toggleHobby(btn, hobby) {
 
   if (isActive) {
     // Add skill dropdown
-    if (!document.getElementById(skill-${hobby})) {
+    if (!document.getElementById(`skill-${hobby}`)) {
       const skillDiv = document.createElement('div');
       skillDiv.classList.add('mb-2');
-      skillDiv.setAttribute('id', skill-${hobby});
+      skillDiv.setAttribute('id', `skill-${hobby}`);
       skillDiv.innerHTML = `
         <label class="me-2">${hobby} Level:</label>
         <select class="form-select skill-select" data-hobby="${hobby}">
@@ -258,7 +258,7 @@ function toggleHobby(btn, hobby) {
     selectedHobbies[hobby] = "";
   } else {
     // Remove skill dropdown
-    const skillDiv = document.getElementById(skill-${hobby});
+    const skillDiv = document.getElementById(`skill-${hobby}`);
     if (skillDiv) skillDiv.remove();
     delete selectedHobbies[hobby];
   }
@@ -289,10 +289,10 @@ saveCustomHobby.addEventListener('click', () => {
     document.getElementById('hobbiesContainer').insertBefore(newBtn, addCustomBtn);
 
     // Add skill dropdown only once
-    if (!document.getElementById(skill-${hobby})) {
+    if (!document.getElementById(`skill-${hobby}`)) {
       const skillDiv = document.createElement('div');
       skillDiv.classList.add('mb-2');
-      skillDiv.setAttribute('id', skill-${hobby});
+      skillDiv.setAttribute('id', `skill-${hobby}`);
       skillDiv.innerHTML = `
         <label class="me-2">${hobby} Level:</label>
         <select class="form-select skill-select" data-hobby="${hobby}">
